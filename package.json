@@ -1,0 +1,38 @@
+{
+  "name": "unocss-preset-color",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "A preset for Unocss",
+  "author": "AuTa <auta520@live.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AuTa/unocss-preset-color.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AuTa/unocss-preset-color/issues"
+  },
+  "keywords": ["unocss"],
+  "files": ["dist"],
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": "./dist/index.js",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "build:demo": "vite build --mode demo",
+    "test": "vitest",
+    "test:update": "vitest -u"
+  },
+  "peerDependencies": {
+    "unocss": ">= 0.56.0 < 1"
+  },
+  "devDependencies": {
+    "biome": "^0.3.3",
+    "typescript": "~5.7.2",
+    "unocss": "^0.65.3",
+    "vite": "^6.0.5",
+    "vite-plugin-dts": "^4.4.0",
+    "vitest": "^3.0.0-beta.3"
+  }
+}
