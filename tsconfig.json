@@ -4,7 +4,8 @@
     "useDefineForClassFields": true,
     "module": "Preserve",
     "lib": [
-      "ES2022"
+      "ES2022",
+      "DOM"
     ],
     "skipLibCheck": true,
     "allowJs": true,
