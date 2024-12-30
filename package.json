@@ -13,26 +13,34 @@
     "url": "https://github.com/AuTa/unocss-preset-color/issues"
   },
   "keywords": ["unocss"],
-  "files": ["dist"],
-  "module": "./dist/index.mjs",
+  "files": ["dist", "src"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./src/*": "./src/*"
+  },
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": "./dist/index.js",
+  "source": "src/index.ts",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "build:demo": "vite build --mode demo",
-    "test": "vitest",
-    "test:update": "vitest -u"
+    "dev": "rslib build --watch",
+    "build": "rslib build",
+    "check": "biome check --write",
+    "format": "biome format --write",
+    "test": "vitest"
   },
   "peerDependencies": {
-    "unocss": ">= 0.56.0 < 1"
+    "unocss": ">= 0.56.0 < 1",
+    "@unocss/preset-mini": ">= 0.56.0 < 1"
   },
   "devDependencies": {
-    "biome": "^0.3.3",
+    "@types/node": "^22.10.2",
+    "@biomejs/biome": "^1.9.4",
+    "@rslib/core": "^0.2.2",
     "typescript": "~5.7.2",
     "unocss": "^0.65.3",
-    "vite": "^6.0.5",
-    "vite-plugin-dts": "^4.4.0",
     "vitest": "^3.0.0-beta.3"
   }
 }
