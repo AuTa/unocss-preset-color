@@ -1,33 +1,26 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "useDefineForClassFields": true,
-    "module": "Preserve",
+    "target": "ESNext",
     "lib": [
-      "ES2022",
-      "DOM"
+      "ESNext",
+      "DOM",
     ],
-    "skipLibCheck": true,
-    "allowJs": true,
-    "resolveJsonModule": true,
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
+    "module": "ESNext",
     "noEmit": true,
-    /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "bundler",
+    "useDefineForClassFields": true,
+    "allowImportingTsExtensions": true,
     /* Vitest */
     "types": [
       "vitest/importMeta"
     ]
   },
   "include": [
-    "src"
+    "src",
+    "test"
   ]
 }

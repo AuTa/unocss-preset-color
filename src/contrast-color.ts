@@ -1,5 +1,7 @@
-import type { RuleContext, CSSObject } from "unocss"
+import type { RuleContext, CSSObject } from 'unocss'
 import { colorResolver } from '@unocss/preset-mini/utils'
+
+import { fallbackColor } from './fallback-color'
 
 const REMOVE_COMMENT_RE = /\/\*.*?\*\//g
 
@@ -61,15 +63,4 @@ function contrastColor(css: CSSObject, delta = 60, sign: '' | '+' | '-' = '') {
     // lch's l is from 0 to 100
     const lch = `lch(from ${color} calc(l - var(${CONTRAST_VAR}) * ${sign}${delta}) c h)`
     return [oklch, lch]
-}
-
-function fallbackColor(css: CSSObject, colors: string[], ctx: RuleContext) {
-    if (css.color) {
-        css.color = undefined
-    }
-    colors.reverse().forEach((color, i) => {
-        css[`color$fallback${i}`] = color
-    })
-    const customCss = ctx.constructCSS(css)
-    return customCss.replaceAll(/color\$fallback\d+/g, 'color')
 }
